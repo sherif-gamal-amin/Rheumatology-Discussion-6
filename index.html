@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheumatology Discussion (5)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            user-select: none; /* يمنع تحديد النص */
+            -webkit-user-select: none; /* لمتصفحات WebKit مثل Chrome وSafari */
+            -moz-user-select: none; /* لمتصفح Firefox */
+            -ms-user-select: none; /* لمتصفح Internet Explorer/Edge */
+        }
+        @media print {
+            body {
+                display: none;
+            }
+        }
+        .quiz-container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .timer {
+            color: red;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            display: none;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct {
+            color: green;
+        }
+        .question-result {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Rheumatology Discussion ( 5 )</h1>
+        <div class="timer" id="timer">Time remaining: 60 seconds</div>
+
+        <div class="question" id="question-1">
+            <p> 1- A 46-year-oId female presents with a burning sensation over the antero-lateral aspect of her right thigh. A diagnosis of meralgia paresthetica is suspected. Which nerve is most likely to be affected? </p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="Common peroneal nerve"> Common peroneal nerve </label>
+                <label><input type="radio" name="q1" value="Anterior cutaneous nerve of thigh"> Anterior cutaneous nerve of thigh </label>
+                <label><input type="radio" name="q1" value="Posterior cutaneous nerve of thigh"> Posterior cutaneous nerve of thigh </label>
+                <label><input type="radio" name="q1" value="Lateral cutaneous nerve of thigh"> Lateral cutaneous nerve of thigh </label>
+                <label><input type="radio" name="q1" value="Sciatic nerve"> Sciatic nerve </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-2">
+            <p> 2- A very tall, slender 16-year-old boy is referred for evaluation. Physical examination reveals long fingers, pectus excavatum, and a high arched palate. Which of the following is most likely to be seen on his CXR? </p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="dextrocardia"> dextrocardia </label>
+                <label><input type="radio" name="q2" value="aortic dilatation"> aortic dilatation </label>
+                <label><input type="radio" name="q2" value="pneumothorax"> pneumothorax </label>
+                <label><input type="radio" name="q2" value="apical interstitial fibrosis"> apical interstitial fibrosis </label>
+                <label><input type="radio" name="q2" value="rib notching"> rib notching </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-3">
+            <p> 3- A 24-year-old man presents with shortness of breath on exertion. He is tall and thin, visual acuity is poor with his glasses off, the jugular venous pressure (JVP) is 4 cm, first heart sound is normal, second sound is soft, a 3/6 early diastolic murmur is heard at the right second intercostal space radiating to the apex. The pulses are bounding, lungs are clear, and his arms are quite long in comparison to his total length. Which of the following is the most likely diagnosis ? </p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="aortic root dilatation and aortic stenosis"> aortic root dilatation and aortic stenosis </label>
+                <label><input type="radio" name="q3" value="left ventricular dilatation and mitral valve prolapse"> left ventricular dilatation and mitral valve prolapse </label>
+                <label><input type="radio" name="q3" value="aortic root dilatation and aortic regurgitation"> aortic root dilatation and aortic regurgitation </label>
+                <label><input type="radio" name="q3" value="aortic dissection"> aortic dissection </label>
+                <label><input type="radio" name="q3" value="mitral stenosis"> mitral stenosis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-4">
+            <p> 4- A 20-year-old man with Marfan syndrome is having back pain. On examination, there is a curvature of his thoracic spine to the left. Which of the following is the most appropriate next step in management? </p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a vigorous exercise program"> a vigorous exercise program </label>
+                <label><input type="radio" name="q4" value="bisphosphonate therapy"> bisphosphonate therapy </label>
+                <label><input type="radio" name="q4" value="mechanical back bracing"> mechanical back bracing </label>
+                <label><input type="radio" name="q4" value="a prophylactic surgical procedure"> a prophylactic surgical procedure </label>
+                <label><input type="radio" name="q4" value="appropriate footwear"> appropriate footwear </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-5">
+            <p> 5- A 69-year-old man develops clubbing of his fingers. Which of the following is most likely associated with this condition? </p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="RF"> RF </label>
+                <label><input type="radio" name="q5" value="aortic stenosis"> aortic stenosis </label>
+                <label><input type="radio" name="q5" value="periosteal inflammation"> periosteal inflammation </label>
+                <label><input type="radio" name="q5" value="crystal-induced arthritis"> crystal-induced arthritis </label>
+                <label><input type="radio" name="q5" value="diffuse osteoarthritis"> diffuse osteoarthritis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-6">
+            <p> 6- A 45-year-old man has had intermittent swelling and pain in the superior part of his auricles for several years. Mild arthritis usually accompanies these episodes. Last year he also had redness, pain, and swelling over the bridge of his nose. Which of the following is the most likely diagnosis? </p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="psoriatic arthritis"> psoriatic arthritis </label>
+                <label><input type="radio" name="q6" value="Behçet’s syndrome"> Behçet’s syndrome </label>
+                <label><input type="radio" name="q6" value="Wegener’s granulomatosis"> Wegener’s granulomatosis </label>
+                <label><input type="radio" name="q6" value="relapsing polychondritis"> relapsing polychondritis </label>
+                <label><input type="radio" name="q6" value="rheumatoid arthritis"> rheumatoid arthritis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-7">
+            <p> 7- Relapsing polychondritis may be a primary disease or may be associated With other rheumatologic diseases. All of the following conditions are associated with relapsing polychondritis EXCEPT: </p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="Scleroderma"> Scleroderma </label>
+                <label><input type="radio" name="q7" value="Myelodysplastic syndrome"> Myelodysplastic syndrome </label>
+                <label><input type="radio" name="q7" value="Spondyloarthritides"> Spondyloarthritides </label>
+                <label><input type="radio" name="q7" value="Systemic lupus erythematosus"> Systemic lupus erythematosus </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-8">
+            <p> 8- Which of the following usually present as monoarthropathy? </p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="SLE"> SLE </label>
+                <label><input type="radio" name="q8" value="Rheumatoid arthritis"> Rheumatoid arthritis </label>
+                <label><input type="radio" name="q8" value="Gout"> Gout </label>
+                <label><input type="radio" name="q8" value="Sjogren's syndrome"> Sjogren's syndrome </label>
+                <label><input type="radio" name="q8" value="Osteoarthritis"> Osteoarthritis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-9">
+            <p> 9- A 69-year-old man presents with an acute episode of gout on his left first metatarsal-phalangeal joint. What is the most likely underlying mechanism'? </p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="Sedentary lifestyle"> Sedentary lifestyle </label>
+                <label><input type="radio" name="q9" value="Decreased renal excretion of uric acid"> Decreased renal excretion of uric acid </label>
+                <label><input type="radio" name="q9" value="Increased endogenous production of uric acid"> Increased endogenous production of uric acid </label>
+                <label><input type="radio" name="q9" value="Starvation"> Starvation </label>
+                <label><input type="radio" name="q9" value="Too much protein in diet"> Too much protein in diet </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-10">
+            <p> 10- A 53 years old man presents to the clinic complaining of sudden onset and sever pain in his left big toe starting the previous evening. On examination, there is redness and swelling of his left big toe with sever pain on passive range of motion. Which of the following conditions is most likely associated with this diagnosis ? </p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="Pernicious anaemia"> Pernicious anaemia </label>
+                <label><input type="radio" name="q10" value="DI"> DI </label>
+                <label><input type="radio" name="q10" value="Alzheimer’s disease"> Alzheimer’s disease </label>
+                <label><input type="radio" name="q10" value="Anorexia"> Anorexia </label>
+                <label><input type="radio" name="q10" value="Renal"> Renal </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-11">
+            <p> 11- All of the following are associated with hyperuricemia except … </p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="Cardiovascular disease"> Cardiovascular disease </label>
+                <label><input type="radio" name="q11" value="Gouty arthritis"> Gouty arthritis </label>
+                <label><input type="radio" name="q11" value="Nephrolithiasis"> Nephrolithiasis </label>
+                <label><input type="radio" name="q11" value="Peripheral neuropathy"> Peripheral neuropathy </label>
+                <label><input type="radio" name="q11" value="Urate nephropathy"> Urate nephropathy </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-12">
+            <p> 12- A 54-year-old man is diagnosed as having gout You are discussing ways to help prevent future attacks. Which one of the following is most likely to precipitate an attack of gout? </p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="Chocolate"> Chocolate </label>
+                <label><input type="radio" name="q12" value="Brazil nuts"> Brazil nuts </label>
+                <label><input type="radio" name="q12" value="Eggs"> Eggs </label>
+                <label><input type="radio" name="q12" value="Sardines"> Sardines </label>
+                <label><input type="radio" name="q12" value="Smoking"> Smoking </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-13">
+            <p> 13- Which one of the following drugs is least likely to cause gout? </p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="Lithium"> Lithium </label>
+                <label><input type="radio" name="q13" value="Bendrofluazide"> Bendrofluazide </label>
+                <label><input type="radio" name="q13" value="Alcohol"> Alcohol </label>
+                <label><input type="radio" name="q13" value="Pyrazinamide"> Pyrazinamide </label>
+                <label><input type="radio" name="q13" value="Furosemide"> Furosemide </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-14">
+            <p> 14- A 72-year-old man presents with an acutely painful right knee. On examination, he had a temperature of 37 C with a hot, swollen right knee. Of relevance amongst his investigations, was his white cell count which was 12.6 Χ 10 9 /l and a knee X-ray revealed reduced joint space and calcification of the articular cartilage. Culture of aspirated fluid revealed no growth. What is the most likely diagnosis? </p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="Gout"> Gout </label>
+                <label><input type="radio" name="q14" value="Psoriatic monoarthropathy"> Psoriatic monoarthropathy </label>
+                <label><input type="radio" name="q14" value="Pseudogout"> Pseudogout </label>
+                <label><input type="radio" name="q14" value="Rheumatoid arthritis"> Rheumatoid arthritis </label>
+                <label><input type="radio" name="q14" value="Septic arthritis"> Septic arthritis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-15">
+            <p> 15- A 63-year-old man presents to the Emergency Department with a 2 day history of a painful and swollen left knee joint. Aspiration reveals positively birefringent crystals and no organisms are seen. Which of the following conditions are not recognised causes of the underlying condition? </p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="Haemochromatosis"> Haemochromatosis </label>
+                <label><input type="radio" name="q15" value="Low magnesium"> Low magnesium </label>
+                <label><input type="radio" name="q15" value="High phosphate"> High phosphate </label>
+                <label><input type="radio" name="q15" value="Acromegaly"> Acromegaly </label>
+                <label><input type="radio" name="q15" value="Hyperparathyroidism"> Hyperparathyroidism </label>
+            </div>
+        </div>
+
+        <div class="question" id="question-16">
+            <p>16- A 45-year-old man who is Known to have haemochromatosis presents with a swollen and painful right knee. An x-ray shows no fracture but extensive chondrocalcinosis. Given the likely diagnosis, which one of the following is most likely to present in the joint fluid?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="Raised hyaluronic acid levels"> Raised hyaluronic acid levels</label>
+                <label><input type="radio" name="q16" value="Monosodium urate crystals"> Monosodium urate crystals</label>
+                <label><input type="radio" name="q16" value="Bipyramidal oxalate crystals"> Bipyramidal oxalate crystals</label>
+                <label><input type="radio" name="q16" value="Negatively birefringent calcium carbonate crystals"> Negatively birefringent calcium carbonate crystals</label>
+                <label><input type="radio" name="q16" value="Positively birefringent rhomboid-shaped crystals"> Positively birefringent rhomboid-shaped crystals</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-17">
+            <p>17- A 54-year-old man presents to the Emergency Department with a 2 day history of an swollen, painful left knee. Aspirated joint fluid shows calcium pyrophosphate crystals. Which of the following blood tests is most useful in revealing an underlying cause?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="Transferrin saturation"> Transferrin saturation</label>
+                <label><input type="radio" name="q17" value="ACTH"> ACTH</label>
+                <label><input type="radio" name="q17" value="ANA"> ANA</label>
+                <label><input type="radio" name="q17" value="Serum ferritin"> Serum ferritin</label>
+                <label><input type="radio" name="q17" value="LDH"> LDH</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-18">
+            <p>18- A 57-year-old man presents by severe pain in his right big toe that it Woke him from a deep sleep. He has no chronic medical conditions. Examination shows an erythematous, warm, swollen, and markedly tender Right great toe. Synovial fluid analysis reveals negatively birefringent, Needle-shaped crystals within polymorphonuclear leukocytes (PMNs). Laboratory studies show: Uric acid 15 mg/dL. Which of the following Is the MOST appropriate pharmacotherapy?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="Oral Allopurinol"> Oral Allopurinol</label>
+                <label><input type="radio" name="q18" value="Intravenous Ceftriaxone"> Intravenous Ceftriaxone</label>
+                <label><input type="radio" name="q18" value="Oral Indomethacin"> Oral Indomethacin</label>
+                <label><input type="radio" name="q18" value="Intra-articular corticosteroid"> Intra-articular corticosteroid</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-19">
+            <p>19- A 64-year-old man with chronic Kidney disease stage 3 secondary to type 2 diabetes mellitus presents with pain and swelling at the right first metatarsophalangeal joint. On examination the joint is hot, erythematous and tender to touch although he can still flex the big toe. What is the most appropriate initial management?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="Colchicine"> Colchicine</label>
+                <label><input type="radio" name="q19" value="Prednisolone"> Prednisolone</label>
+                <label><input type="radio" name="q19" value="Co-codamol 30/500"> Co-codamol 30/500</label>
+                <label><input type="radio" name="q19" value="Allopurinol"> Allopurinol</label>
+                <label><input type="radio" name="q19" value="Indomethacin"> Indomethacin</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-20">
+            <p>20- A 40-year-old man presents with acute monoarthritis of the right knee. Gout is confirmed following joint aspiration and examination of the fluid under polarised light microscopy. He underwent endoscopy 3 weeks earlier because of dyspepsia and this confirmed a duodenal ulcer. Which of the following would be the best initial treatment for him?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="Allopurinol"> Allopurinol</label>
+                <label><input type="radio" name="q20" value="Indomethacin alone"> Indomethacin alone</label>
+                <label><input type="radio" name="q20" value="Indomethacin and Lansoprazole"> Indomethacin and Lansoprazole</label>
+                <label><input type="radio" name="q20" value="Indomethacin and Misoprostol"> Indomethacin and Misoprostol</label>
+                <label><input type="radio" name="q20" value="Intra-articular corticosteroid injection"> Intra-articular corticosteroid injection</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-21">
+            <p>21- A 71-year-old man presents with an erythematous, swollen first metatarsophalangeal joint on the left foot. This is causing him considerable pain and he is having difficulty walking. He has never had any previous similar episodes. His past medical history includes atrial fibrillation and type 2 diabetes mellitus and his current medications are warfarin, metformin and simvastatin. What is the most appropriate treatment of this episode?</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="Intra-articular corticosteroid"> Intra-articular corticosteroid</label>
+                <label><input type="radio" name="q21" value="Colchicine"> Colchicine</label>
+                <label><input type="radio" name="q21" value="ibuprofen"> ibuprofen</label>
+                <label><input type="radio" name="q21" value="Diclofenac"> Diclofenac</label>
+                <label><input type="radio" name="q21" value="Prednisolone"> Prednisolone</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-22">
+            <p>22- A 51-year-old male presents with an acute onset of swelling and pain in his right knee. Aspiration shows negatively birefringent crystals with no organisms seen. His pain fails to settle with NSAIDs. What is the most appropriate next step in his management?</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="Repeat joint aspiration and intra-articular depomederone"> Repeat joint aspiration and intra-articular depomederone</label>
+                <label><input type="radio" name="q22" value="Allopurinol"> Allopurinol</label>
+                <label><input type="radio" name="q22" value="IV flucloxacillin"> IV flucloxacillin</label>
+                <label><input type="radio" name="q22" value="Diuretics"> Diuretics</label>
+                <label><input type="radio" name="q22" value="Low dose methotrexate"> Low dose methotrexate</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-23">
+            <p>23- A 59-year-old man with a history of gout presents with a swollen and painful first metatarsophalangeal joint. He currently takes allopurinol 400 mg od as gout prophylaxis. What should happen to his allopurinol therapy?</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="Stop and recommence 4 weeks after acute inflammation has settled"> Stop and recommence 4 weeks after acute inflammation has settled</label>
+                <label><input type="radio" name="q23" value="Reduce allopurinol to 100 mg od until acute attack has settled"> Reduce allopurinol to 100 mg od until acute attack has settled</label>
+                <label><input type="radio" name="q23" value="Stop and switch to colchicine prophylaxis"> Stop and switch to colchicine prophylaxis</label>
+                <label><input type="radio" name="q23" value="Stop and recommence 2 weeks after acute inflammation has settled"> Stop and recommence 2 weeks after acute inflammation has settled</label>
+                <label><input type="radio" name="q23" value="Continue allopurinol in current dose"> Continue allopurinol in current dose</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-24">
+            <p>24- A 70-year-old man with renal insufficiency and recurrent attacks of proven gouty arthritis has elevated serum and urine uric acid levels. He is now asymptomatic. The most appropriate approach is ..</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="no chronic therapy"> no chronic therapy</label>
+                <label><input type="radio" name="q24" value="chronic allopurinol"> chronic allopurinol</label>
+                <label><input type="radio" name="q24" value="chronic colchicine"> chronic colchicine</label>
+                <label><input type="radio" name="q24" value="chronic probenicid"> chronic probenicid</label>
+                <label><input type="radio" name="q24" value="chronic celecoxib"> chronic celecoxib</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-25">
+            <p>25- Mechanism of action of allopurinol ??</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="Xanthine oxidase inhibitor"> Xanthine oxidase inhibitor</label>
+                <label><input type="radio" name="q25" value="Pancreatic lipase inhibitor"> Pancreatic lipase inhibitor</label>
+                <label><input type="radio" name="q25" value="Leukotriene receptor antagonist"> Leukotriene receptor antagonist</label>
+                <label><input type="radio" name="q25" value="ADP receptor blockade"> ADP receptor blockade</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-26">
+            <p>26- Which of the following best describes the mechanism of action of febuxostat ?</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="Xanthine oxidase analogue"> Xanthine oxidase analogue</label>
+                <label><input type="radio" name="q26" value="Xanthine oxidase inhibitor"> Xanthine oxidase inhibitor</label>
+                <label><input type="radio" name="q26" value="Xanthine oxidase stimulator"> Xanthine oxidase stimulator</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-27">
+            <p>27- A 54-year-old man is recovering following his first episode of gout. The pain and inflammation settled 4 days ago. He has no risk factors for the development of gout and there is no evidence of gouty tophi on examination. What is the most suitable point to start uric acid lowering therapy?</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="Immediately"> Immediately</label>
+                <label><input type="radio" name="q27" value="If more than 6 episodes of gout in a 1 year period"> If more than 6 episodes of gout in a 1 year period</label>
+                <label><input type="radio" name="q27" value="If one further attack of gout in the next 12 months"> If one further attack of gout in the next 12 months</label>
+                <label><input type="radio" name="q27" value="4 weeks after the initial attack of gout has settled"> 4 weeks after the initial attack of gout has settled</label>
+                <label><input type="radio" name="q27" value="If more than 4 episodes of gout in a 1 year period"> If more than 4 episodes of gout in a 1 year period</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-28">
+            <p>28- A 57-year-old man with a history of ischaemic heart disease presents with a hot, erythematous and painful left 1st metatarsophalangeal joint. The attack settles following a course of non-steroidal anti-inflammatories. He currently takes aspirin 75 mg od for secondary prevention of ischaemic heart disease What should happen regarding his medication?</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="Switch aspirin to clopidogrel"> Switch aspirin to clopidogrel</label>
+                <label><input type="radio" name="q28" value="Continue aspirin at current dose"> Continue aspirin at current dose</label>
+                <label><input type="radio" name="q28" value="Increase aspirin dose to 300 mg od"> Increase aspirin dose to 300 mg od</label>
+                <label><input type="radio" name="q28" value="Switch aspirin to dipyridamole"> Switch aspirin to dipyridamole</label>
+                <label><input type="radio" name="q28" value="Stop aspirin"> Stop aspirin</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-29">
+            <p>29- 62 years old hypertensive man presents with pain, redness and swelling of right knee. What is the investigation of choice ?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="ESR"> ESR</label>
+                <label><input type="radio" name="q29" value="HLA"> HLA</label>
+                <label><input type="radio" name="q29" value="arthrocentesis"> arthrocentesis</label>
+                <label><input type="radio" name="q29" value="Radiology"> Radiology</label>
+                <label><input type="radio" name="q29" value="Serology"> Serology</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-30">
+            <p>30- A 45-year-old female with a history of rheumatoid arthritis presents to the Emergency Department with two day history of a hot, painful, swollen right elbow joint. What is the most appropriate management?</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="Joint aspiration"> Joint aspiration</label>
+                <label><input type="radio" name="q30" value="Start infliximab"> Start infliximab</label>
+                <label><input type="radio" name="q30" value="Oral high-dose prednisolone"> Oral high-dose prednisolone</label>
+                <label><input type="radio" name="q30" value="Short course of methotrexate"> Short course of methotrexate</label>
+                <label><input type="radio" name="q30" value="Depomederone injection"> Depomederone injection</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-31">
+            <p>31- 70 years old man complains of pain and fever in left knee. Several days ago, he suffered an abrasion of his knee while working in his garage. The knee is red, warm and swollen. An arthrocentesis is performed which shows 200,000 leukocytes and glucose 20 mg/ dl, no crystals. Which of the following is the most important next step?</p>
+            <div class="options">
+                <label><input type="radio" name="q31" value="Gram stain and culture of joint fluid."> Gram stain and culture of joint fluid.</label>
+                <label><input type="radio" name="q31" value="Uric acid level"> Uric acid level</label>
+                <label><input type="radio" name="q31" value="Antinuclear antibody ANA"> Antinuclear antibody ANA</label>
+                <label><input type="radio" name="q31" value="Anti neutrophil cytoplasmic antibody ANCA"> Anti neutrophil cytoplasmic antibody ANCA</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-32">
+            <p>32- A 50-year-old female with a history of rheumatoid presents with a suspected septic knee joint. A diagnostic aspiration is performed and sent to microbiology. Which of the following organisms is most likely to be responsible?</p>
+            <div class="options">
+                <label><input type="radio" name="q32" value="Staphylococcus aureus"> Staphylococcus aureus</label>
+                <label><input type="radio" name="q32" value="Staphylococcus epidermidis"> Staphylococcus epidermidis</label>
+                <label><input type="radio" name="q32" value="Escherichia coli"> Escherichia coli</label>
+                <label><input type="radio" name="q32" value="Neisseria gonorrhoeae"> Neisseria gonorrhoeae</label>
+                <label><input type="radio" name="q32" value="Streptococcus pneumoniae"> Streptococcus pneumoniae</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-33">
+            <p>33- A 27-year-old woman is referred to orthopaedics. Three years she had surgery and chemotherapy for thyroid cancer. Follow up scans to date have shown no evidence of any disease recurrence. For the past two months she has been experiencing gradually increasing pain in her right hip which is worse on exercising. On examination passive movement of the hip is painful in all directions, especially internal rotation. An x-ray ordered by her GP has been reported as normal. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q33" value="Trochanteric bursitis"> Trochanteric bursitis</label>
+                <label><input type="radio" name="q33" value="Avascular necrosis of the femoral head"> Avascular necrosis of the femoral head</label>
+                <label><input type="radio" name="q33" value="Primary hyperparathyroidism"> Primary hyperparathyroidism</label>
+                <label><input type="radio" name="q33" value="Metastatic deposits"> Metastatic deposits</label>
+                <label><input type="radio" name="q33" value="Hypoparathyroidism"> Hypoparathyroidism</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-34">
+            <p>34- A 23-year-old female presents with a painful ankle following an inversion injury whilst playing tennis. Which one of the following findings is least relevant when deciding whether an x-ray is needed?</p>
+            <div class="options">
+                <label><input type="radio" name="q34" value="Swelling immediately after the injury and now"> Swelling immediately after the injury and now</label>
+                <label><input type="radio" name="q34" value="Pain in the malleolar zone"> Pain in the malleolar zone</label>
+                <label><input type="radio" name="q34" value="Tenderness at the medial malleolar zone"> Tenderness at the medial malleolar zone</label>
+                <label><input type="radio" name="q34" value="Tenderness at the lateral malleolar zone"> Tenderness at the lateral malleolar zone</label>
+                <label><input type="radio" name="q34" value="Cannot walk 4 steps immediately after the injury and now"> Cannot walk 4 steps immediately after the injury and now</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-35">
+            <p>35- A 79-year-old man presents with a history of lower back pain and right hip pain. Blood tests reveal the following: Calcium 2.20 mmol/l, Phosphate 0.8 mmol/l, ALP 890 u/L. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q35" value="Primary hyperparathyroidism"> Primary hyperparathyroidism</label>
+                <label><input type="radio" name="q35" value="Chronic Kidney disease"> Chronic Kidney disease</label>
+                <label><input type="radio" name="q35" value="Osteomalacia"> Osteomalacia</label>
+                <label><input type="radio" name="q35" value="Osteoporosis"> Osteoporosis</label>
+                <label><input type="radio" name="q35" value="Paget's disease"> Paget's disease</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-36">
+            <p>36- In a patient with Paget’s disease of the bone, which of the following blood test results are most likely to be seen?</p>
+            <div class="options">
+                <label><input type="radio" name="q36" value="Normal serum calcium, normal serum phosphate, raised serum alkaline phosphatase"> Normal serum calcium, normal serum phosphate, raised serum alkaline phosphatase</label>
+                <label><input type="radio" name="q36" value="Normal serum calcium, normal serum phosphate, normal serum alkaline phosphatase"> Normal serum calcium, normal serum phosphate, normal serum alkaline phosphatase</label>
+                <label><input type="radio" name="q36" value="Raised serum calcium, low serum phosphate, normal serum alkaline phosphatase"> Raised serum calcium, low serum phosphate, normal serum alkaline phosphatase</label>
+                <label><input type="radio" name="q36" value="Normal serum calcium, low serum phosphate, raised serum alkaline phosphatase"> Normal serum calcium, low serum phosphate, raised serum alkaline phosphatase</label>
+                <label><input type="radio" name="q36" value="Low serum calcium, low serum phosphate, low serum alkaline phosphatase"> Low serum calcium, low serum phosphate, low serum alkaline phosphatase</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-37">
+            <p>37- A 73-year-old man presents pain in his right thigh. This has been getting progressively worse for the past 9 months despite being otherwise well. An x-ray is reported as follows: X-ray right femur .. Radiolucency of subarticular region suggestive of osteolysis. Some areas of patchy sclerosis. Bloods tests show: Calcium 2.38 mmol/l, Phosphate 0.85 mmol/l, Alkaline phosphatase 544 u/L, Prostate specific antigen 4.4 ng/ml. What is the most appropriate action?</p>
+            <div class="options">
+                <label><input type="radio" name="q37" value="Vitamin D supplementation"> Vitamin D supplementation</label>
+                <label><input type="radio" name="q37" value="Check serum testosterone"> Check serum testosterone</label>
+                <label><input type="radio" name="q37" value="Referral to an orthopaedic surgeon"> Referral to an orthopaedic surgeon</label>
+                <label><input type="radio" name="q37" value="Referral to a urologist"> Referral to a urologist</label>
+                <label><input type="radio" name="q37" value="IV bisphosphonates"> IV bisphosphonates</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-38">
+            <p>38- A 34-year-old intravenous drug user is admitted with a purpuric rash affecting her legs. Blood tests reveal the following: Hb 11.4 g/dl, Platelets 489 * 10 9/l, WCC 12.3 * 10 9/l, HCV PCR positive, HBsAg negative, Rheumatoid factor positive, C3/C4 reduced. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q38" value="Polyarteritis nodosa"> Polyarteritis nodosa</label>
+                <label><input type="radio" name="q38" value="Henoch-Schonlein purpura"> Henoch-Schonlein purpura</label>
+                <label><input type="radio" name="q38" value="Wegener's granulomatosis"> Wegener's granulomatosis</label>
+                <label><input type="radio" name="q38" value="Cryoglobulinemia"> Cryoglobulinemia</label>
+                <label><input type="radio" name="q38" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-39">
+            <p>39- A 41-year-old man presents with persistent fatigue for the past 8 months. Which one of the following features is least consistent with a diagnosis of chronic fatigue syndrome?</p>
+            <div class="options">
+                <label><input type="radio" name="q39" value="Dizziness"> Dizziness</label>
+                <label><input type="radio" name="q39" value="Painful lymph nodes without enlargement"> Painful lymph nodes without enlargement</label>
+                <label><input type="radio" name="q39" value="Having a busy day improves the symptoms"> Having a busy day improves the symptoms</label>
+                <label><input type="radio" name="q39" value="Palpitations"> Palpitations</label>
+                <label><input type="radio" name="q39" value="Headaches"> Headaches</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-40">
+            <p>40- A 34-year-old is diagnosed with chronic fatigue syndrome. Which one of the following interventions is most useful?</p>
+            <div class="options">
+                <label><input type="radio" name="q40" value="Graded exercise therapy"> Graded exercise therapy</label>
+                <label><input type="radio" name="q40" value="Psychodynamic psychotherapy"> Psychodynamic psychotherapy</label>
+                <label><input type="radio" name="q40" value="Graded physiotherapy"> Graded physiotherapy</label>
+                <label><input type="radio" name="q40" value="Advice to avoid alcohol and caffeine"> Advice to avoid alcohol and caffeine</label>
+                <label><input type="radio" name="q40" value="Low-dose fluoxetine"> Low-dose fluoxetine</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-41">
+            <p>41- A 41-year-old female presents with lethargy and pain all over her body. This has been present for the past six months and is often worse when she is stressed or cold. Clinical examination is unremarkable other than a large number of tender points throughout her body. A series of blood tests including an autoimmune screen, inflammatory markers and thyroid functions are normal. Given the likely diagnosis, which one of the following is not helpful in management?</p>
+            <div class="options">
+                <label><input type="radio" name="q41" value="Amitriptyline"> Amitriptyline</label>
+                <label><input type="radio" name="q41" value="Trigger point injections"> Trigger point injections</label>
+                <label><input type="radio" name="q41" value="Cognitive behavioural therapy"> Cognitive behavioural therapy</label>
+                <label><input type="radio" name="q41" value="Exercise programme"> Exercise programme</label>
+                <label><input type="radio" name="q41" value="Paracetamol"> Paracetamol</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-42">
+            <p>42- Which one of the following is most useful in the management of Familial Mediterranean Fever?</p>
+            <div class="options">
+                <label><input type="radio" name="q42" value="Prednisolone"> Prednisolone</label>
+                <label><input type="radio" name="q42" value="Erythromycin"> Erythromycin</label>
+                <label><input type="radio" name="q42" value="Cyclophosphamide"> Cyclophosphamide</label>
+                <label><input type="radio" name="q42" value="Colchicine"> Colchicine</label>
+                <label><input type="radio" name="q42" value="Benzylpenicillin"> Benzylpenicillin</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-43">
+            <p>43- ANA in SLE is positive in approximately:</p>
+            <div class="options">
+                <label><input type="radio" name="q43" value="60% cases"> 60% cases</label>
+                <label><input type="radio" name="q43" value="70% cases"> 70% cases</label>
+                <label><input type="radio" name="q43" value="80% cases"> 80% cases</label>
+                <label><input type="radio" name="q43" value="95% cases"> 95% cases</label>
+                <label><input type="radio" name="q43" value="100% cases"> 100% cases</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-44">
+            <p>44- Terminal interphalangeal joint (Arthritis mutilans) is classically involved in:</p>
+            <div class="options">
+                <label><input type="radio" name="q44" value="Rheumatoid arthritis"> Rheumatoid arthritis</label>
+                <label><input type="radio" name="q44" value="Reactive arthritis"> Reactive arthritis</label>
+                <label><input type="radio" name="q44" value="Behcet's syndrome"> Behcet's syndrome</label>
+                <label><input type="radio" name="q44" value="Psoriatic arthropathy"> Psoriatic arthropathy</label>
+                <label><input type="radio" name="q44" value="Pseudogout"> Pseudogout</label>
+            </div>
+        </div>
+
+        <button class="btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        <button class="btn" id="submitBtn" onclick="evaluateQuiz()" style="display: none;">Submit Quiz</button>
+
+        <div class="result" id="result">
+            <h2>Results</h2>
+            <div id="score"></div>
+            <div id="answers-summary"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+                event.preventDefault();
+                alert("تم تعطيل أدوات المطور!");
+            }
+        });
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // يمنع فتح قائمة السياق
+            alert("النقر بزر الماوس الأيمن غير مسموح به.");
+        });
+        let currentQuestion = 1;
+        const totalQuestions = 44;
+        let score = 0;
+        let timerInterval;
+        const answers = {
+            q1: "Lateral cutaneous nerve of thigh",
+            q2: "aortic dilatation",
+            q3: "aortic root dilatation and aortic regurgitation",
+            q4: "mechanical back bracing",
+            q5: "periosteal inflammation",
+            q6: "relapsing polychondritis",
+            q7: "Scleroderma",
+            q8: "Gout",
+            q9: "Decreased renal excretion of uric acid",
+            q10: "Renal",
+            q11: "Peripheral neuropathy",
+            q12: "Sardines",
+            q13: "Lithium",
+            q14: "Pseudogout",
+            q15: "High phosphate",
+            q16: "Positively birefringent rhomboid-shaped crystals",
+            q17: "Transferrin saturation",
+            q18: "Oral Indomethacin",
+            q19: "Colchicine",
+            q20: "Intra-articular corticosteroid injection",
+            q21: "Colchicine",
+            q22: "Repeat joint aspiration and intra-articular depomederone",
+            q23: "Continue allopurinol in current dose",
+            q24: "chronic allopurinol",
+            q25: "Xanthine oxidase inhibitor",
+            q26: "Xanthine oxidase inhibitor",
+            q27: "If one further attack of gout in the next 12 months",
+            q28: "Continue aspirin at current dose",
+            q29: "arthrocentesis",
+            q30: "Joint aspiration",
+            q31: "Gram stain and culture of joint fluid",
+            q32: "Staphylococcus aureus",
+            q33: "Avascular necrosis of the femoral head",
+            q34: "Swelling immediately after the injury and now",
+            q35: "Paget's disease",
+            q36: "Normal serum calcium, normal serum phosphate, raised serum alkaline phosphatase",
+            q37: "IV bisphosphonates",
+            q38: "Cryoglobulinemia",
+            q39: "Having a busy day improves the symptoms",
+            q40: "Graded exercise therapy",
+            q41: "Trigger point injections",
+            q42: "Colchicine",
+            q43: "95% cases",
+            q44: "Psoriatic arthropathy"
+        };
+
+        function showQuestion() {
+            document.querySelectorAll('.question').forEach((q, index) => {
+                q .style.display = index + 1 === currentQuestion ? 'block' : 'none';
+            });
+            document.getElementById('nextBtn').style.display = currentQuestion < totalQuestions ? 'block' : 'none';
+            document.getElementById('submitBtn').style.display = currentQuestion === totalQuestions ? 'block' : 'none';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            clearInterval(timerInterval);
+            startTimer();
+            showQuestion();
+        }
+
+        function startTimer() {
+            let timeRemaining = 60;
+            document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    if (currentQuestion < totalQuestions) {
+                        nextQuestion();
+                    } else {
+                        evaluateQuiz();
+                    }
+                }
+            }, 1000);
+        }
+
+        function evaluateQuiz() {
+            score = 0;
+            let summary = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const correctAnswer = answers[`q${i}`];
+                const questionElement = document.getElementById(`question-${i}`);
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let questionSummary = `<p><strong>Question ${i}: </strong>${questionElement.querySelector('p').innerText}</p>`;
+
+                options.forEach(option => {
+                    const optionLabel = option.parentElement;
+                    if (option.value === correctAnswer) {
+                        optionLabel.style.color = 'green';
+                    } else if (selectedOption && selectedOption.value === option.value) {
+                        optionLabel.style.color = 'red';
+                    }
+                });
+
+                questionSummary += `<div>Answer: <strong>${selectedOption ? selectedOption.value : 'None selected'}</strong></div>`;
+                questionSummary += `<div>Correct answer: <strong>${correctAnswer}</strong></div>`;
+
+                if (selectedOption && selectedOption.value === correctAnswer) {
+                    score++;
+                    summary += questionSummary + `<p class="correct">Correct</p>`;
+                } else {
+                    summary += questionSummary + `<p class="incorrect">Incorrect</p>`;
+                }
+            }
+
+            document.getElementById('score').textContent = `Your score: ${score} out of ${totalQuestions}`;
+            document.getElementById('answers-summary').innerHTML = summary;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('timer').style.display = 'none'; 
+            document.querySelectorAll('.question').forEach((q) => q.style.display = 'none');
+
+            clearInterval(timerInterval);
+        }
+
+        window.onload = function() {
+            showQuestion();
+            startTimer();
+        };
+        
+        
+        function nextQuestion() {
+    // Increase the current question counter
+            currentQuestion++;
+
+            // Reset the timer
+            clearInterval(timerInterval); // Stop the current timer
+            startTimer(); // Start the timer from the beginning
+
+            // Show the next question
+            showQuestion();
+        }
+        
+    </script>
+</body>
+</html>
